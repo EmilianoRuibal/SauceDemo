@@ -20,7 +20,7 @@ public class BaseTest {
     public static Properties prop;
     public static InputStream fileInputStream;
     public static WebDriver driver;
-    private String urlKey = "url"; 
+    private String urlKey = "url1"; 
 
     //@BeforeClass
     public void setup() {
@@ -28,7 +28,7 @@ public class BaseTest {
     	// Cargar propiedades desde el archivo config.properties
         prop = new Properties();
         try {
-            FileInputStream fileInputStream = new FileInputStream("..\\Techpanda\\src\\main\\java\\resources\\config\\config.properties");
+            FileInputStream fileInputStream = new FileInputStream("..\\SauceDEMO\\src\\main\\java\\resources\\config\\config.properties");
             prop.load(fileInputStream);
         } catch (IOException e) {
             e.printStackTrace();
@@ -71,9 +71,9 @@ public class BaseTest {
 	@AfterClass
     public void tearDown() {
         // Este método se ejecutará después de cada método de prueba anotado con @Test
-		if (driver != null) {
+		/*if (driver != null) {
             driver.quit();
-        }
+        }*/
         Reporter.log("======Navegador Cerrado======", true);
     }
 
